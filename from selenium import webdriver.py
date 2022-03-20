@@ -62,6 +62,9 @@ def delay(n):
     time.sleep(randint(2, n))
 
 if __name__ == "__main__":
+
+    id = input("write your id : ")
+    pw = input("write your pw : ")
     driver = uc.Chrome()
 
     options = {}
@@ -89,7 +92,7 @@ if __name__ == "__main__":
     delay(5)
 
     # login google account
-    driver.find_element_by_id("identifierId").send_keys("soo86081010@gmail.com")
+    driver.find_element_by_id("identifierId").send_keys(id)
     driver.find_element_by_id("identifierNext").click()
     delay(5)
 
@@ -101,7 +104,7 @@ if __name__ == "__main__":
     WebDriverWait(driver, 10).until(
         expect.element_to_be_clickable(password_locator)
     )
-    password.send_keys("dkssud1010@")
+    password.send_keys(pw)
     driver.find_element_by_id("passwordNext").click()
     delay(5)
 
